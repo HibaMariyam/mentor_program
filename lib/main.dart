@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mentor_program/common/utils/app_theme.dart';
+import 'package:mentor_program/features/auth/views/login_page.dart';
 import 'package:mentor_program/features/home/cubit/home_cubit.dart';
 import 'package:mentor_program/features/home/views/home_page.dart';
 
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         themeMode: ThemeMode.dark,
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
-        home: HomePage()
+        home: LoginPage()
       ),
     );
   }

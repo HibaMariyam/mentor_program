@@ -6,10 +6,12 @@ part 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {
   HomeCubit() : super(HomeInitial());
-  void getHomeData()async{
+  void getHomeData(
+    String search
+  )async{
     emit(HomeLoading());
     try {
-      final resp =await dioClient.get('/courses/');
+      final resp =await dioClient.get('/courses', queryParameters: {'search': search});
       final List <Course> courses=[];
       for(final course in resp.data){
         courses.add(Course.fromJson(course));
